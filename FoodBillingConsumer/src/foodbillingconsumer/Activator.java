@@ -19,5 +19,8 @@ public class Activator implements BundleActivator {
 		FoodBillingService foodBillingService = (FoodBillingService) Context.getService(serviceReference);	
 	}
 
-	
+	public void stop(BundleContext Context) throws Exception {
+		System.out.println("Stop Food Billing Consumer Service");
+		Context.ungetService(serviceReference);
+	}
 }
