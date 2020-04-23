@@ -15,5 +15,8 @@ public class Activator implements BundleActivator {
 				FoodBillingService.class.getName(), foodbillingservice, null);
 	}
 
-	
+	public void stop(BundleContext context) throws Exception {
+		System.out.println("Food Billing Service Stop");
+		publishServiceRegistration.unregister();
+	}
 }
