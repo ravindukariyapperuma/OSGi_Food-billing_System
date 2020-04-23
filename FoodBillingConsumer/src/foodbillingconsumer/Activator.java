@@ -13,5 +13,11 @@ public class Activator implements BundleActivator {
 
 	ServiceReference serviceReference;
 
+	public void start(BundleContext Context) throws Exception {
+		System.out.println("Start Food Billing Consumer Service");
+		serviceReference = Context.getServiceReference(FoodBillingService.class.getName());
+		FoodBillingService foodBillingService = (FoodBillingService) Context.getService(serviceReference);	
+	}
+
 	
 }
